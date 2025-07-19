@@ -7,74 +7,7 @@
   <link rel="manifest" href="manifest.json">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
   
-  <!-- Firebase SDK -->
-  <script type="module">
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-    import { getMessaging, getToken, onMessage } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-messaging.js';
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyCzWmJUAceuYGjzbVv0ceu7RU78fVs0OM4",
-      authDomain: "criczone-b1c64.firebaseapp.com",
-      projectId: "criczone-b1c64",
-      storageBucket: "criczone-b1c64.firebasestorage.app",
-      messagingSenderId: "508655160995",
-      appId: "1:508655160995:web:813362e519ed6f79b07916"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const messaging = getMessaging(app);
-    window.messaging = messaging;
-  </script>
-
   <style>
-    /* Existing styles... */
-
-    .menu-dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .menu-toggle {
-      background: none;
-      border: none;
-      font-size: 22px;
-      color: #fff;
-      cursor: pointer;
-      padding: 5px;
-      margin-left: 0px;
-      margin-right: 20px;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      right: 0;
-      top: 30px;
-      background-color: #222;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.7);
-      border-radius: 8px;
-      z-index: 1001;
-      overflow: hidden;
-      min-width: 180px;
-    }
-
-    .dropdown-content a {
-      color: #fff;
-      padding: 10px 16px;
-      display: block;
-      text-decoration: none;
-      font-size: 14px;
-      transition: background 0.3s ease;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #0af;
-    }
-
-    .menu-dropdown:hover .dropdown-content {
-      display: block;
-    }
-
     /* Notification Toggle Button */
     .notification-toggle {
       background: none;
@@ -234,50 +167,50 @@
       border-left: 4px solid #0af;
     }
 
-    /* Drawer (Side menu) */
-    #drawer {
-      position: fixed;
-      top: 0;
-      left: -600px;
-      width: 280px;
-      height: 100%;
-      background: #111;
-      z-index: 2000;
-      padding: 20px;
-      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.7);
-      transition: left 0.3s ease;
+    .menu-dropdown {
+      position: relative;
+      display: inline-block;
     }
-    #drawer.open {
-      left: 0;
-    }
-    #drawer h3 {
-      color: #0af;
-      margin-bottom: 20px;
-    }
-    #drawer a {
-      display: block;
-      color: #fff;
-      text-decoration: none;
-      margin-bottom: 12px;
-      padding: 10px;
-      border-radius: 6px;
-      transition: background 0.2s ease;
-      font-weight: 600;
-      background: #222;
-    }
-    #drawer a:hover {
-      background: #0af;
-      color: #fff;
-    }
-    #drawerClose {
+
+    .menu-toggle {
       background: none;
-      color: #ccc;
       border: none;
       font-size: 22px;
-      position: absolute;
-      top: 10px;
-      right: 15px;
+      color: #fff;
       cursor: pointer;
+      padding: 5px;
+      margin-left: 0px;
+      margin-right: 20px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 30px;
+      background-color: #222;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.7);
+      border-radius: 8px;
+      z-index: 1001;
+      overflow: hidden;
+      min-width: 180px;
+    }
+
+    .dropdown-content a {
+      color: #fff;
+      padding: 10px 16px;
+      display: block;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #0af;
+    }
+
+    .menu-dropdown:hover .dropdown-content {
+      display: block;
     }
 
     /* Notification Settings in Drawer */
@@ -324,6 +257,52 @@
 
     .notification-switch.enabled::after {
       transform: translateX(26px);
+    }
+
+    /* Drawer (Side menu) */
+    #drawer {
+      position: fixed;
+      top: 0;
+      left: -600px;
+      width: 280px;
+      height: 100%;
+      background: #111;
+      z-index: 2000;
+      padding: 20px;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.7);
+      transition: left 0.3s ease;
+    }
+    #drawer.open {
+      left: 0;
+    }
+    #drawer h3 {
+      color: #0af;
+      margin-bottom: 20px;
+    }
+    #drawer a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin-bottom: 12px;
+      padding: 10px;
+      border-radius: 6px;
+      transition: background 0.2s ease;
+      font-weight: 600;
+      background: #222;
+    }
+    #drawer a:hover {
+      background: #0af;
+      color: #fff;
+    }
+    #drawerClose {
+      background: none;
+      color: #ccc;
+      border: none;
+      font-size: 22px;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      cursor: pointer;
     }
 
     /* Backdrop overlay */
@@ -450,8 +429,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      
-      }
+    }
 
     .search-close.active {
       opacity: 1;
@@ -1031,100 +1009,105 @@
 </div>
 
 <script>
-// Notification System Variables
+// ✅ Notification System Variables
 let notificationsEnabled = false;
-let fcmToken = null;
 let notificationIntervals = [];
+let matches = [];
+let currentSubTab = 'live';
+let intervals = [];
 
-// Initialize Firebase Messaging
-async function initializeNotifications() {
+// ✅ Check Notification Support
+async function checkNotificationSupport() {
+  if (!('Notification' in window)) {
+    console.log('❌ This browser does not support notifications');
+    return false;
+  }
+  
+  if (!('serviceWorker' in navigator)) {
+    console.log('❌ This browser does not support service workers');
+    return false;
+  }
+  
+  console.log('✅ Notification support available');
+  return true;
+}
+
+// ✅ Register Service Worker
+async function registerServiceWorker() {
   try {
-    if ('serviceWorker' in navigator) {
-      const registration = await navigator.serviceWorker.register('/firebase-messaging-sw.js');
-      console.log('Service Worker registered:', registration);
-    }
-
-    // Check if notifications are supported
-    if (!('Notification' in window)) {
-      console.log('This browser does not support notifications');
-      return;
-    }
-
-    // Check current permission status
-    const permission = Notification.permission;
-    updateNotificationUI(permission);
-
-    if (permission === 'granted') {
-      await setupFCM();
-    }
-
-    // Load saved notification preference
-    const savedPreference = localStorage.getItem('notificationsEnabled');
-    if (savedPreference === 'true' && permission === 'granted') {
-      notificationsEnabled = true;
-      updateNotificationUI('granted');
-    }
-
+    const registration = await navigator.serviceWorker.register('/sw.js');
+    console.log('✅ Service Worker registered successfully:', registration);
+    return registration;
   } catch (error) {
-    console.error('Error initializing notifications:', error);
+    console.error('❌ Service Worker registration failed:', error);
+    return null;
   }
 }
 
-// Setup Firebase Cloud Messaging
-async function setupFCM() {
-  try {
-    if (!window.messaging) {
-      console.error('Firebase messaging not initialized');
-      return;
-    }
-
-    const { getToken, onMessage } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-messaging.js');
-    
-    // Get FCM token
-    fcmToken = await getToken(window.messaging, {
-      vapidKey: 'BIkxX-Gb1nBgnZJ3sNoG0-6qQjAus7X4PdKXEEBXRewnxpbSjPNl4tVG3TGuejcFhLXmED4qEkqWAZ0SEE2f8B4'
-    });
-
-    if (fcmToken) {
-      console.log('FCM Token:', fcmToken);
-      // Store token in localStorage for future use
-      localStorage.setItem('fcmToken', fcmToken);
-    }
-
-    // Handle foreground messages
-    onMessage(window.messaging, (payload) => {
-      console.log('Message received in foreground:', payload);
-      showToast(payload.notification.title, 'info');
-    });
-
-  } catch (error) {
-    console.error('Error setting up FCM:', error);
-  }
-}
-
-// Enable notifications
+// ✅ Enable Notifications
 async function enableNotifications() {
   try {
+    console.log('🔔 Requesting notification permission...');
+    
+    const isSupported = await checkNotificationSupport();
+    if (!isSupported) {
+      showToast('❌ Notifications not supported in this browser', 'error');
+      return;
+    }
+
+    // Service Worker register করা
+    const registration = await registerServiceWorker();
+    if (!registration) {
+      showToast('❌ Failed to register service worker', 'error');
+      return;
+    }
+
+    // Permission চাওয়া
     const permission = await Notification.requestPermission();
+    console.log('🔔 Permission result:', permission);
     
     if (permission === 'granted') {
       notificationsEnabled = true;
       localStorage.setItem('notificationsEnabled', 'true');
-      await setupFCM();
       updateNotificationUI('granted');
       closeNotificationModal();
-      showToast('Notifications enabled successfully!', 'success');
+      showToast('✅ Notifications enabled successfully!', 'success');
       startNotificationScheduler();
+      
+      // Test notification পাঠানো
+      setTimeout(() => {
+        showTestNotification();
+      }, 1000);
     } else {
-      showToast('Notification permission denied', 'error');
+      showToast('❌ Notification permission denied', 'error');
+      updateNotificationUI('denied');
     }
   } catch (error) {
-    console.error('Error enabling notifications:', error);
-    showToast('Error enabling notifications', 'error');
+    console.error('❌ Error enabling notifications:', error);
+    showToast('❌ Error enabling notifications', 'error');
   }
 }
 
-// Toggle notifications
+// ✅ Test Notification
+function showTestNotification() {
+  if ('serviceWorker' in navigator && notificationsEnabled) {
+    navigator.serviceWorker.ready.then(registration => {
+      console.log('📤 Sending test notification...');
+      registration.showNotification('🎉 CricStreamZone', {
+        body: 'Notifications are now enabled! You will get match alerts.',
+        icon: 'https://i.postimg.cc/3rPWWckN/icon-192.png',
+        badge: 'https://i.postimg.cc/3rPWWckN/icon-192.png',
+        tag: 'test-notification',
+        requireInteraction: false,
+        silent: false,
+        vibrate: [200, 100, 200],
+        data: { url: window.location.href }
+      });
+    });
+  }
+}
+
+// ✅ Toggle Notifications
 function toggleNotifications() {
   const permission = Notification.permission;
   
@@ -1138,15 +1121,15 @@ function toggleNotifications() {
   updateNotificationUI(permission);
   
   if (notificationsEnabled) {
-    showToast('Notifications enabled', 'success');
+    showToast('🔔 Notifications enabled', 'success');
     startNotificationScheduler();
   } else {
-    showToast('Notifications disabled', 'info');
+    showToast('🔕 Notifications disabled', 'info');
     stopNotificationScheduler();
   }
 }
 
-// Handle notification button click
+// ✅ Handle Notification Button Click
 function handleNotificationClick() {
   const permission = Notification.permission;
   
@@ -1159,7 +1142,7 @@ function handleNotificationClick() {
   }
 }
 
-// Update notification UI
+// ✅ Update UI
 function updateNotificationUI(permission) {
   const toggle = document.getElementById('notificationToggle');
   const switchEl = document.getElementById('notificationSwitch');
@@ -1168,31 +1151,33 @@ function updateNotificationUI(permission) {
   if (permission === 'granted' && notificationsEnabled) {
     toggle.classList.remove('disabled');
     toggle.classList.add('enabled');
+    toggle.innerHTML = '🔔';
     switchEl.classList.add('enabled');
     badge.classList.remove('show');
   } else if (permission === 'granted') {
     toggle.classList.remove('enabled');
     toggle.classList.add('disabled');
+    toggle.innerHTML = '🔕';
     switchEl.classList.remove('enabled');
     badge.classList.remove('show');
   } else {
     toggle.classList.remove('enabled', 'disabled');
+    toggle.innerHTML = '🔔';
     switchEl.classList.remove('enabled');
     badge.classList.add('show');
   }
 }
 
-// Show notification modal
+// ✅ Modal Functions
 function showNotificationModal() {
   document.getElementById('notificationModal').classList.add('active');
 }
 
-// Close notification modal
 function closeNotificationModal() {
   document.getElementById('notificationModal').classList.remove('active');
 }
 
-// Show toast notification
+// ✅ Toast Message
 function showToast(message, type = 'info') {
   const toast = document.createElement('div');
   toast.className = `toast-notification ${type}`;
@@ -1204,95 +1189,118 @@ function showToast(message, type = 'info') {
   
   setTimeout(() => {
     toast.classList.remove('show');
-    setTimeout(() => document.body.removeChild(toast), 300);
-  }, 3000);
+    setTimeout(() => {
+      if (document.body.contains(toast)) {
+        document.body.removeChild(toast);
+      }
+    }, 300);
+  }, 4000);
 }
 
-// Start notification scheduler
+// ✅ Start Notification Scheduler
 function startNotificationScheduler() {
   if (!notificationsEnabled) return;
   
-  stopNotificationScheduler(); // Clear existing intervals
+  stopNotificationScheduler(); // Clear existing
   
-  // Check every minute for notification triggers
+  console.log('🔔 Starting notification scheduler...');
+  
+  // প্রতি মিনিটে চেক করা
   const interval = setInterval(() => {
     checkAndSendNotifications();
-  }, 60000); // Check every minute
+  }, 60000); // 1 minute
   
   notificationIntervals.push(interval);
+  
+  // তাৎক্ষণিক একবার চেক করা
+  setTimeout(() => {
+    checkAndSendNotifications();
+  }, 2000);
 }
 
-// Stop notification scheduler
+// ✅ Stop Notification Scheduler
 function stopNotificationScheduler() {
   notificationIntervals.forEach(interval => clearInterval(interval));
   notificationIntervals = [];
+  console.log('🔕 Notification scheduler stopped');
 }
 
-// Check and send notifications
+// ✅ Check and Send Notifications
 function checkAndSendNotifications() {
-  if (!notificationsEnabled || !matches.length) return;
+  if (!notificationsEnabled || !matches.length) {
+    console.log('⏸️ Notifications disabled or no matches');
+    return;
+  }
   
   const now = new Date();
+  console.log('🔍 Checking notifications at:', now.toLocaleTimeString());
   
-  matches.forEach(match => {
+  matches.forEach((match, index) => {
     const matchTime = new Date(match.MatchTime);
-    const timeDiff = matchTime - now;
-    const duration = parseInt(match.MatchDuration) || 360;
+    const timeDiff = matchTime - now; // milliseconds
+    const duration = parseInt(match.MatchDuration) || 360; // minutes
     const endTime = new Date(matchTime.getTime() + (duration * 60 * 1000));
     
-    // 15 minutes before match
+    const matchId = `${match.Team1}-${match.Team2}-${match.MatchTime}`;
+    
+    // 15 minutes before (14-15 min range)
     if (timeDiff > 14 * 60 * 1000 && timeDiff <= 15 * 60 * 1000) {
       sendNotification(
         '⏰ Match Starting Soon!',
         `${match.Team1} vs ${match.Team2} starts in 15 minutes`,
-        'match-15min-' + match.MatchTime
+        `15min-${matchId}`
       );
     }
     
-    // 5 minutes before match
+    // 5 minutes before (4-5 min range)
     else if (timeDiff > 4 * 60 * 1000 && timeDiff <= 5 * 60 * 1000) {
       sendNotification(
         '🚨 Match Starting Very Soon!',
         `${match.Team1} vs ${match.Team2} starts in 5 minutes`,
-        'match-5min-' + match.MatchTime
+        `5min-${matchId}`
       );
     }
     
-    // Match started
-    else if (timeDiff > -60 * 1000 && timeDiff <= 0) {
+    // Match started (0-1 min range)
+    else if (timeDiff > -60 * 1000 && timeDiff <= 60 * 1000) {
       sendNotification(
         '🔴 LIVE NOW!',
         `${match.Team1} vs ${match.Team2} is now LIVE!`,
-        'match-live-' + match.MatchTime
+        `live-${matchId}`
       );
     }
     
-    // Match ended
+    // Match ended (0-1 min after end)
     else if (now >= endTime && (now - endTime) <= 60 * 1000) {
       sendNotification(
         '🏁 Match Ended',
         `${match.Team1} vs ${match.Team2} has ended`,
-        'match-end-' + match.MatchTime
+        `end-${matchId}`
       );
     }
   });
 }
 
-// Send notification
+// ✅ Send Notification
 function sendNotification(title, body, tag) {
   if (!notificationsEnabled) return;
   
-  // Check if this notification was already sent
+  // Check if already sent
   const sentNotifications = JSON.parse(localStorage.getItem('sentNotifications') || '[]');
-  if (sentNotifications.includes(tag)) return;
+  if (sentNotifications.includes(tag)) {
+    console.log('📤 Notification already sent:', tag);
+    return;
+  }
+  
+  console.log('📤 Sending notification:', title, body);
   
   // Send notification
   if ('serviceWorker' in navigator && 'Notification' in window) {
     navigator.serviceWorker.ready.then(registration => {
       registration.showNotification(title, {
         body: body,
-        icon: '/icon-192.png',
-        badge: '/icon-192.png',
+        icon: 'https://i.postimg.cc/3rPWWckN/icon-192.png',
+        badge: 'https://i.postimg.cc/3rPWWckN/icon-192.png',
         tag: tag,
         requireInteraction: false,
         silent: false,
@@ -1304,7 +1312,7 @@ function sendNotification(title, body, tag) {
     });
   }
   
-  // Mark notification as sent
+  // Mark as sent
   sentNotifications.push(tag);
   localStorage.setItem('sentNotifications', JSON.stringify(sentNotifications));
   
@@ -1315,7 +1323,36 @@ function sendNotification(title, body, tag) {
   }
 }
 
-// Search functionality - Updated
+// ✅ Initialize on Page Load
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('🚀 Initializing notifications...');
+  
+  // Check saved preference
+  const savedPreference = localStorage.getItem('notificationsEnabled');
+  const permission = Notification.permission;
+  
+  if (savedPreference === 'true' && permission === 'granted') {
+    notificationsEnabled = true;
+    updateNotificationUI('granted');
+    registerServiceWorker().then(() => {
+      startNotificationScheduler();
+    });
+  } else {
+    updateNotificationUI(permission);
+  }
+  
+  // Show modal after 3 seconds if not shown before
+  setTimeout(() => {
+    const hasShownModal = localStorage.getItem('hasShownNotificationModal');
+    
+    if (permission === 'default' && !hasShownModal) {
+      showNotificationModal();
+      localStorage.setItem('hasShownNotificationModal', 'true');
+    }
+  }, 3000);
+});
+
+// Search functionality
 function toggleSearch() {
   const searchInput = document.getElementById('search');
   const searchClose = document.querySelector('.search-close');
@@ -1426,10 +1463,6 @@ window.addEventListener('load', () => {
 // API url
 const matchesApi = "https://script.google.com/macros/s/AKfycbxZfHUGsH19x3hZp5eeo3tEMJuQxvOPHpyS_LAqow4rlBciyrhP0NdaI2NzeZiyA5SF9A/exec";  
 
-let matches = [];  
-let intervals = [];  
-let currentSubTab = 'live';
-
 function clearIntervals() {  
   intervals.forEach(i => clearInterval(i));  
   intervals = [];  
@@ -1438,7 +1471,7 @@ function clearIntervals() {
 function getNow() { return new Date(); }  
 function getCountdown(t) { return Math.max(0, new Date(t) - getNow()); }  
 
-// নতুন ফরম্যাট ফাংশন - স্মার্ট টাইমার (সেকেন্ড -> মিনিট -> ঘন্টা)
+// Time formatting functions
 function formatTime(ms) {
   let totalSeconds = Math.floor(ms / 1000);
   let hours = Math.floor(totalSeconds / 3600);
@@ -1462,7 +1495,7 @@ function formatCountUp(ms) {
   return formatTime(ms);
 }
 
-// দিনের নাম বের করার ফাংশন
+// Get day name
 function getDayName(date) {
   const today = new Date();
   const tomorrow = new Date(today);
@@ -1478,7 +1511,7 @@ function getDayName(date) {
   return days[targetDate.getDay()];
 }
 
-// Match status checker with duration support
+// Match status checker
 function getMatchStatus(matchTime, matchDuration, now) {
   const startTime = new Date(matchTime);
   const endTime = new Date(startTime.getTime() + (matchDuration * 60 * 1000));
@@ -1848,6 +1881,7 @@ fetch(matchesApi)
   
   // Start notification scheduler after matches are loaded
   if (notificationsEnabled) {
+    console.log('🔔 Starting notification scheduler with matches loaded');
     startNotificationScheduler();
   }
 })  
@@ -2108,7 +2142,7 @@ function updateNetworkStatus() {
         z-index: 9999;
         font-size: 14px;
         font-weight: 600;
-        `;
+      `;
       document.body.appendChild(offlineNotice);
     } else {
       const existingNotice = document.getElementById('offline-notice');
@@ -2122,22 +2156,6 @@ function updateNetworkStatus() {
 window.addEventListener('online', updateNetworkStatus);
 window.addEventListener('offline', updateNetworkStatus);
 updateNetworkStatus();
-
-// Initialize notifications when page loads
-document.addEventListener('DOMContentLoaded', () => {
-  initializeNotifications();
-  
-  // Show notification modal after 3 seconds if not already shown
-  setTimeout(() => {
-    const permission = Notification.permission;
-    const hasShownModal = localStorage.getItem('hasShownNotificationModal');
-    
-    if (permission === 'default' && !hasShownModal) {
-      showNotificationModal();
-      localStorage.setItem('hasShownNotificationModal', 'true');
-    }
-  }, 3000);
-});
 
 // Clean up old sent notifications on page load
 document.addEventListener('DOMContentLoaded', () => {
@@ -2157,6 +2175,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Handle visibility change to restart notification scheduler
 document.addEventListener('visibilitychange', () => {
   if (!document.hidden && notificationsEnabled) {
+    console.log('🔔 Page visible again, restarting notification scheduler');
     startNotificationScheduler();
   }
 });
