@@ -13,7 +13,43 @@
   "icons": [
     {
       "src": "https://i.postimg.cc/3rPWWckN/icon-192.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://i.postimg.cc/3rPWWckN/icon-192.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://i.postimg.cc/3rPWWckN/icon-192.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://i.postimg.cc/3rPWWckN/icon-192.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://i.postimg.cc/3rPWWckN/icon-192.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://i.postimg.cc/3rPWWckN/icon-192.png",
       "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://i.postimg.cc/3rPWWckN/icon-192.png",
+      "sizes": "384x384",
       "type": "image/png",
       "purpose": "any maskable"
     },
@@ -29,7 +65,15 @@
       "src": "https://i.postimg.cc/3rPWWckN/icon-192.png",
       "sizes": "1280x720",
       "type": "image/png",
-      "form_factor": "wide"
+      "form_factor": "wide",
+      "label": "Live Cricket Matches"
+    },
+    {
+      "src": "https://i.postimg.cc/3rPWWckN/icon-192.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile View"
     }
   ],
   "shortcuts": [
@@ -44,7 +88,34 @@
           "sizes": "192x192"
         }
       ]
+    },
+    {
+      "name": "Today's Matches",
+      "short_name": "Today",
+      "description": "View today's cricket matches",
+      "url": "/?tab=today",
+      "icons": [
+        {
+          "src": "https://i.postimg.cc/3rPWWckN/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Upcoming Matches",
+      "short_name": "Upcoming",
+      "description": "View upcoming cricket matches",
+      "url": "/?tab=upcoming",
+      "icons": [
+        {
+          "src": "https://i.postimg.cc/3rPWWckN/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ],
-  "gcm_sender_id": "508655160995"
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "protocol_handlers": [],
+  "file_handlers": []
 }
